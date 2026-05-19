@@ -108,8 +108,8 @@ export default function Countdown() {
       </p>
       <div className="countdown-badge">
         {over
-          ? "¡El Mundial ha comenzado! ⚽"
-          : days === 0 ? "¡Hoy comienza el Mundial! ⚽"
+          ? "¡El Mundial ha comenzado!"
+          : days === 0 ? "¡Hoy comienza el Mundial!"
           : days === 1 ? "Falta 1 día"
           : `Faltan ${days} días`}
       </div>

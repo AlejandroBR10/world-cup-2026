@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <p className="footer-copy">
-          © 2026 · Hecho con ⚽ · No afiliado a FIFA
+          © 2026 · Hecho con ❤️ por alexbrrrrr · No afiliado a FIFA
         </p>
       </div>
     </footer>
