@@ -3,7 +3,7 @@ import type { ShareButtonProps } from "../interfaces/share-button.interface";
 const SHARE_URL = typeof window !== "undefined" ? window.location.href : "";
 const SHARE_TITLE = "Mundial FIFA 2026 ⚽";
 
-function buildText(days: number, hours: number, minutes: number): string {
+function buildText(days: number, hours: number): string {
   if (days > 0)
     return `¡Faltan ${days} días para el Mundial FIFA 2026! 🏆⚽ EE.UU., México y Canadá. ¿Estás listo?`;
   if (hours > 0)
@@ -58,10 +58,9 @@ function IconFacebook() {
 
 export default function ShareButton({
   days,
-  hours,
-  minutes,
+  hours 
 }: ShareButtonProps) {
-  const text = buildText(days, hours, minutes);
+  const text = buildText(days, hours);
   const canNativeShare = typeof navigator !== "undefined" && !!navigator.share;
 
   // Móvil: Web Share API nativa
