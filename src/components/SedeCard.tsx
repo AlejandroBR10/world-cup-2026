@@ -1,4 +1,4 @@
-import type { Sede } from "../data/sedes";
+import type { Sede } from "../data/sede";
 import { useWeather } from "../hooks/useWeather";
 
 interface SedeCardProps {

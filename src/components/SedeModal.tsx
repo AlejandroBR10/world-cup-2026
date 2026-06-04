@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import type { Sede } from "../data/sedes";
+import type { Sede } from "../data/sede";
 import { useWeather } from "../hooks/useWeather";
 
 // Fix Leaflet icon en Vite

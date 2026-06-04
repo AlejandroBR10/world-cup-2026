@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
-import type { Sede } from "../data/sedes";
+import type { Sede } from "../data/sede";
 
 // Fix Leaflet default icon en Vite
 delete (L.Icon.Default.prototype as any)._getIconUrl;
