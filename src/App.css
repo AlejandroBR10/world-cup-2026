@@ -1,13 +1,15 @@
-@import "tailwindcss";
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap');
 
+@import "tailwindcss";
 /* ─── Reset / Base ──────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body, #root {
   height: 100%;
   width: 100%;
+   background: #060a10; /* ← asegúrate que esté */
 }
 
 body {
@@ -347,6 +349,8 @@ body {
   z-index: 2;
   font-family: 'Barlow', system-ui, sans-serif;
   flex-shrink: 0;
+  background: #060a10; /* ← agrega esto */
+  width: 100%;
 }
 
 .footer-divider {
@@ -416,13 +420,12 @@ body {
 ═══════════════════════════════════════════════════════ */
 
 .sedes-root {
-  min-height: 100vh;
+
   background: #060a10;
-  padding: 4rem 2rem 4rem;
+  padding: 6rem 2rem 4rem; /* ← 6rem arriba en lugar de 4rem */
   font-family: 'Barlow', system-ui, sans-serif;
   width: 100%;
   box-sizing: border-box;
- 
 }
 
 /* ─── Header ────────────────────────────────────────── */
@@ -884,4 +887,95 @@ body {
   .sedes-grid { grid-template-columns: 1fr; }
   .sede-modal { max-width: 100%; }
   .sede-card__img-wrap { height: 150px; }
+}
+/* ═══════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s, padding 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+/* Sólida al hacer scroll */
+.navbar--solid {
+  background: rgba(6,10,16,0.9);
+  backdrop-filter: blur(16px);
+  border-color: rgba(255,255,255,0.07);
+  padding: 0.8rem 2rem;
+}
+
+/* ─── Logo ──────────────────────────────────────────── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navbar__logo:hover { opacity: 0.8; }
+
+.navbar__logo-icon { font-size: 18px; }
+
+.navbar__logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.navbar__logo-year { color: #e8192c; }
+
+/* ─── Links ─────────────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar__link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar__link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+.navbar__link--active {
+  color: #fff;
+  background: rgba(232,25,44,0.12);
+  border: 1px solid rgba(232,25,44,0.3);
+}
+
+.navbar__link--active:hover {
+  background: rgba(232,25,44,0.18);
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 600px) {
+  .navbar { padding: 1rem 1.2rem; }
+  .navbar--solid { padding: 0.7rem 1.2rem; }
+  .navbar__logo-text { font-size: 16px; }
+  .navbar__link { font-size: 11px; padding: 5px 10px; letter-spacing: 0.1em; }
 }
